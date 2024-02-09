@@ -1,0 +1,12 @@
+{
+  "domain": "radarr_actions",
+  "name": "Radarr Actions",
+  "codeowners": ["@avraham"],
+  "config_flow": false,
+  "dependencies": [],
+  "documentation": "https://github.com/avraham/hass_radarr_actions",
+  "integration_type": "service",
+  "iot_class": "local_push",
+  "requirements": ["requests>=2.31.0"],
+  "version": "0.0.1"
+}

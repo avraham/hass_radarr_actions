@@ -1,0 +1,43 @@
+add_movie:
+  # Description of the service
+  description: "Add a movie to a radarr server."
+  fields:
+    host:
+      description: "Radarr server address with protocol (http or https) and port (usually :7878). Required."
+      # Example value that can be passed for this field
+      example: "http://127.0.0.1:7878"
+    api_key:
+      description: "Radarr API Key. Required."
+    # Key of the field
+    movie_title:
+      # Description of the field
+      description: "Name of the movie or term. Required."
+      # Example value that can be passed for this field
+      example: "Children of men"
+    profile_id: 
+      description: "Quality profile id number. eg. 4 is 1080p. Required."
+      example: 4
+    root_directory: 
+      description: "Path to Radarr root directory. Also knwon as rootFolderPath. Required."
+      example: /path/to/movies/directory
+    tmdbid_api_key_v3: 
+      description: "https://www.themoviedb.org API Key. Used for better responses. Get one ats https://www.themoviedb.org/settings/api v3 auth. Optional."
+      example: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    exclude_older_than_n_years: 
+      description: "Exclude searching movies older than N years. Upcoming releases are always included. Optional."
+      example: 70
+    search_release: 
+      description: "Ask Radarr to search for a release. (Default: False). Optional."
+      example: False
+
+remove_last_movie:
+  # Description of the service
+  description: "Removes last added movie via Radarr action services."
+  fields:
+    host:
+      description: "Radarr server address with protocol (http or https) and port (usually :7878). Required."
+      # Example value that can be passed for this field
+      example: "http://127.0.0.1:7878"
+    api_key:
+      description: "Radarr API Key. Required."
+    # Key of the field

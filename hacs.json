@@ -1,0 +1,5 @@
+{
+    "name": "Radarr Actions",
+    "homeassistant": "2023.2",
+    "render_readme" : true
+}
