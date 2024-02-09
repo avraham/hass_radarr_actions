@@ -11,6 +11,7 @@ It creates services such as Add Movie and Remove Movie that can be configured us
 ## Installation
 
 Install this component via HACS using the custom repositories option. More information here: [install from custom repositories](https://hacs.xyz/docs/faq/custom_repositories/)
+Once you added the custom repository make sure to click Download to complete the installation.
 
 ## Configuration
 
