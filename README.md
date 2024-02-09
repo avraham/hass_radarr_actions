@@ -25,7 +25,7 @@ RadarrAddMovie:
         host: "http://192.168.1.101:7878" #replace with your host
         api_key: "YOUR_RADARR_API_KEY" 
         movie_title: '{{ movie }}'
-        profile_id: 4 #replace with your profile_id
+        profile_id: 4 #replace with your profile_id. See Wiki for more info
         root_directory: "/path/to/directory" #replace with your root_directory
         search_release: True # True or False
         tmdbid_api_key_v3: "YOUR_TMDBID_API_KEY" #Optional. Remove field if not used.
@@ -57,7 +57,7 @@ RadarrAddUpcomingMovie:
         host: "http://192.168.1.101:7878" #replace with your host
         api_key: "YOUR_RADARR_API_KEY" 
         movie_title: '{{ movie }}'
-        profile_id: 4 #replace with your profile_id
+        profile_id: 4 #replace with your profile_id. See Wiki for more info
         root_directory: "/path/to/directory" #replace with your root_directory
         exclude_older_than_n_years: 2
         search_release: True # True or False
