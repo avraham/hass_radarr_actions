@@ -6,17 +6,17 @@ It creates services such as Add Movie and Remove Movie that can be configured us
 - Radarr v3 or newer.
 - Custom integration [yarvis](https://github.com/siemon-geeroms/yarvis). It enables you to pass dynamic tokens to your defined [intent scripts](https://www.home-assistant.io/integrations/intent_script)
 
-*Vanilla Home Assistant [intent scripts](https://www.home-assistant.io/integrations/intent_script) don't allow wildcard. That's why yarvis is required.*
+*Vanilla Home Assistant [intent scripts](https://www.home-assistant.io/integrations/intent_script) don't allow wildcards. That's why yarvis is required.*
 
 ## Installation
 
-Install this component via HACS using the custom repositories option. More information here: [install from custom repositories](https://hacs.xyz/docs/faq/custom_repositories/)
+Install this component via HACS using the custom repositories option. More information here: [install from custom repositories](https://hacs.xyz/docs/faq/custom_repositories/). 
 Once you added the custom repository make sure to click Download to complete the installation.
 
 ## Configuration
 
 ### Intent scripts
-Add your intents to your configuration.yaml under the intent_script domain.
+Add your intents to your configuration.yaml inside the intent_script domain.
 ```yaml
 RadarrAddMovie:
   action:
@@ -48,7 +48,7 @@ RadarrRemoveLastMovie:
     text: "{{ action_response['message'] }}"
 ```
 
-You can create more intents for specific tasks. For example, excluding older than 2 years would be great for adding new and upcoming movies with very high success rate.
+You can create more intents for specific tasks, or different Radarr instances. For example, an intent excluding movies older than 2 years would be great for adding new and upcoming movies with very high success rate.
 ```yaml
 RadarrAddUpcomingMovie:
   action:
@@ -70,14 +70,14 @@ RadarrAddUpcomingMovie:
 ```
 
 ### yarvis integration
-1. Once yarvis is installed, go to Home Assistant > Devices & Services > Integrations > yarvis > Configure.
-Add the sentences for the intents that can recieve a wildcard token via yarvis.
+1. Once yarvis is installed, go to Home Assistant > Settings > Devices & Services > Integrations > yarvis > Configure.
+Add the sentences for the intents that you previously defined, so they can recieve a wildcard token via yarvis.
 ```yaml
 RadarrAddMovie:
   sentences:
     - add movie (?P<movie>.*?$)
 ```
-2. Add a voice assistant (Setting - Voice assistants) or change your current one to use the Yarvis conversation agent.
+2. Go to Home Assistant > Settings > Voice Assistants. Add a voice assistant or change your current one to use the Yarvis conversation agent.
 3. Restart HA.
 
 ### Test it
@@ -90,6 +90,7 @@ add movie children of men
 
 ### Add Movie
 Looks up for a movie title or partial title and add the best match to Radarr.
+(It uses the Radarr lookup service).
 
 | Fields                     | Description                                                                                                                 | Example                   | Required |
 |----------------------------|-----------------------------------------------------------------------------------------------------------------------------|---------------------------|----------|
@@ -98,9 +99,9 @@ Looks up for a movie title or partial title and add the best match to Radarr.
 | movie_title                | Name of the movie or term (include year for best match)                                                                     | Children of men           | Yes      |
 | profile_id                 | Quality profile id number. eg. 4 is 1080p                                                                                   | 4                         | Yes      |
 | root_directory             | Path to Radarr root directory. Also knwon as rootFolderPath                                                                 | /path/to/movies/directory | Yes      |
-| exclude_older_than_n_years | Exclude searching movies older than N years.                                                                                | 70                        | No       |
+| exclude_older_than_n_years | Exclude searching movies older than N years. (Remove field to include all years).                                                                             | 70                        | No       |
 | search_release             | Ask Radarr to search for a release. (Default: False)                                                                        | True                      | No       |
-| tmdbid_api_key_v3          | https://www.themoviedb.org API Key. Used for detailed responses. Get one at https://www.themoviedb.org/settings/api v3 auth | XXXXXXXXXXXXX             | No       |
+| tmdbid_api_key_v3          | https://www.themoviedb.org API Key. Used for detailed responses. It's free and provides a better experience. Get one at https://www.themoviedb.org/settings/api v3 auth. (Remove field if not used)| XXXXXXXXXXXXX             | No       |
 
 
 ### Remove Movie
