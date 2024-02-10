@@ -2,6 +2,9 @@
 Custom Home Assistant integration for interacting with Radarr via [Assist](https://www.home-assistant.io/voice_control/).
 It creates services such as Add Movie and Remove Movie that can be configured using [intent scripts](https://www.home-assistant.io/integrations/intent_script) to interact with Radarr via voice and text.
 
+![banner](https://media3.giphy.com/media/YHS3q6eeRAgvNmga6Z/giphy.gif)
+
+
 ## Requirements
 - Radarr v3 or newer.
 - Custom integration [yarvis](https://github.com/siemon-geeroms/yarvis). It enables you to pass dynamic tokens to your defined [intent scripts](https://www.home-assistant.io/integrations/intent_script)
