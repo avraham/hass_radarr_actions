@@ -101,7 +101,7 @@ Looks up for a movie title or partial title and add the best match to Radarr.
 | root_directory             | Path to Radarr root directory. Also knwon as rootFolderPath                                                                 | /path/to/movies/directory | Yes      |
 | exclude_older_than_n_years | Exclude searching movies older than N years. (Remove field to include all years).                                                                             | 70                        | No       |
 | search_release             | Ask Radarr to search for a release. (Default: False)                                                                        | True                      | No       |
-| tmdbid_api_key_v3          | https://www.themoviedb.org API Key. Used for detailed responses. It's free and provides a better experience. Get one at https://www.themoviedb.org/settings/api v3 auth. (Remove field if not used)| XXXXXXXXXXXXX             | No       |
+| tmdbid_api_key_v3          | https://www.themoviedb.org API Key. Used for movie cast details in responses. It's free. Get one at https://www.themoviedb.org/settings/api v3 auth. (Remove field if not used)| XXXXXXXXXXXXX             | No       |
 
 
 ### Remove Movie
