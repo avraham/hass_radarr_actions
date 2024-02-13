@@ -35,7 +35,7 @@ class MovieDownloader:
         self.RADARR_DOWNLOAD_PATH = root_directory
         self.RADARR_QUALITY_PROFILE_ID = profile_id
 
-        self.TMDBID_API_V3 = tmdbid_api_key_v3
+        self.TMDBID_API_V3 = tmdbid_api_key_v3 not "" ? tmdbid_api_key_v3 : None
 
         self.voice_feedback = False
 
@@ -176,13 +176,13 @@ class MovieDownloader:
                 logging.error("Sorry. That was not a valid option. It needs to be a number.")
 
         response = {
-            'status' : self.status, 
+            'status' : self.status,
             'code' : self.code,
             'data' : self.data,
             'message' : self.message
         }
         return response
-    
+
     def remove_movie(self, id):
         self.headers = {
             'Content-type':'application/json',
@@ -196,7 +196,7 @@ class MovieDownloader:
         if r.status_code == 200:
 
             self.tts_google("Movie removed.")
-           
+
         else:
             self.status = 'failed'
             logging.debug("movie wasn't removed. r.status_code:"+str(r.status_code))
@@ -204,13 +204,13 @@ class MovieDownloader:
             logging.debug(self.curlify_request(r))
 
         response = {
-            'status' : self.status, 
+            'status' : self.status,
             'code' : self.code,
             'data' : self.data,
             'message' : self.message
         }
         return response
-    
+
 
     def prepare_movie_json(self, media, search=False):
         data = {}
