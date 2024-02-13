@@ -253,7 +253,7 @@ class MovieDownloader:
 
         if r.status_code == 201:
 
-            if str(data['cast']) == "" or :
+            if str(data['cast']) == "" :
                 self.tts_google("I added the movie "+str(data['title'])+" to your list.")
             else:
                 self.tts_google("I added the movie "+str(data['title'])+" with "+str(data['cast'])+" to your list.")
