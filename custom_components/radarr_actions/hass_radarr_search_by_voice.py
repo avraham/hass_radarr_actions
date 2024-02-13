@@ -27,7 +27,7 @@ class MovieDownloader:
         mode 2 - download option given from previous search.
         mode 3 - search latest movies by Actor/Actress and offers 5 options to choose from.
     '''
-    def __init__(self, host, api_key, root_directory="", profile_id="", tmdbid_api_key_v3=""):
+    def __init__(self, host, api_key, root_directory="", profile_id="", tmdbid_api_key_v3=None):
 
 
         self.RADARR_SERVER = host
@@ -35,10 +35,7 @@ class MovieDownloader:
         self.RADARR_DOWNLOAD_PATH = root_directory
         self.RADARR_QUALITY_PROFILE_ID = profile_id
 
-        if tmdbid_api_key_v3 == "":
-            self.TMDBID_API_V3 = None
-        else:
-            self.TMDBID_API_V3 = tmdbid_api_key_v3
+        self.TMDBID_API_V3 = tmdbid_api_key_v3
 
         self.voice_feedback = False
 
@@ -256,7 +253,7 @@ class MovieDownloader:
 
         if r.status_code == 201:
 
-            if str(data['cast']) == "":
+            if str(data['cast']) == "" or :
                 self.tts_google("I added the movie "+str(data['title'])+" to your list.")
             else:
                 self.tts_google("I added the movie "+str(data['title'])+" with "+str(data['cast'])+" to your list.")
@@ -335,6 +332,9 @@ class MovieDownloader:
             else:
                 logging.debug("Getting cast request failed.")
                 return("")
+        else:
+            logging.debug("No tmdbid_api_key_v3.")
+            return("")
 
 
     def get_actor_id(self, actor_name):
