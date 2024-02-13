@@ -35,7 +35,7 @@ class MovieDownloader:
         self.RADARR_DOWNLOAD_PATH = root_directory
         self.RADARR_QUALITY_PROFILE_ID = profile_id
 
-        self.TMDBID_API_V3 = tmdbid_api_key_v3 not "" ? tmdbid_api_key_v3 : None
+        self.TMDBID_API_V3 = tmdbid_api_key_v3 == "" ?  None : tmdbid_api_key_v3
 
         self.voice_feedback = False
 
