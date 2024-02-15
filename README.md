@@ -18,7 +18,7 @@ Once you added the custom repository make sure to click Download to complete the
 
 ## Configuration
 
-## Enable Component
+### Enable Component
 Add the component to your configuration.yaml.
 ```yaml
 radarr_actions:
