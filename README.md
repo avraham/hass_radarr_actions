@@ -57,6 +57,8 @@ RadarrRemoveLastMovie:
     text: "{{ action_response['message'] }}"
 ```
 
+*tmdbid_api_key_v3* is used for movie cast details in responses. It's optional, remove field completely if not used. It's free. You can get one at https://www.themoviedb.org/settings/api v3 auth. 
+
 You can create more intents for specific tasks, or different Radarr instances. For example, an intent excluding movies older than 2 years would be great for adding new and upcoming movies with very high success rate.
 ```yaml
 RadarrAddUpcomingMovie:
