@@ -18,6 +18,12 @@ Once you added the custom repository make sure to click Download to complete the
 
 ## Configuration
 
+## Enable Component
+Add the component to your configuration.yaml.
+```yaml
+radarr_actions:
+```
+
 ### Intent scripts
 Add your intents to your configuration.yaml inside the intent_script domain.
 ```yaml
