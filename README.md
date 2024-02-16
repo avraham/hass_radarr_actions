@@ -1,5 +1,5 @@
 # Radarr Actions
-Custom Home Assistant integration for interacting with Radarr via [Assist](https://www.home-assistant.io/voice_control/).
+Custom Home Assistant component for interacting with Radarr via [Assist](https://www.home-assistant.io/voice_control/).
 It creates services such as Add Movie and Remove Movie that can be configured using [intent scripts](https://www.home-assistant.io/integrations/intent_script) to interact with Radarr via voice and text.
 
 ![banner](https://media3.giphy.com/media/YHS3q6eeRAgvNmga6Z/giphy.gif)
